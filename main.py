@@ -5,9 +5,10 @@ import requests
 # Configurations
 USER_EMAIL = config.USER_EMAIL
 DEVICE_PASS = config.DEVICE_PASS 
+WEBSITE = config.WEBSITE
 
-r = requests.get("http://somnog.so", timeout=5)
-if r.status_code == 200:
+r = requests.get("", timeout=5)
+if r.status_code != 200:
     with smtplib.SMTP('smtp.gmail.com',587) as smtp:
         smtp.ehlo()
         smtp.starttls()
